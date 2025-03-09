@@ -1,0 +1,145 @@
+app {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #121212, #232323);
+  color: #f4c518;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #1f1f1f;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(244, 197, 24, 0.8);
+  width: 90%;
+  max-width: 1400px;
+}
+
+.logo {
+  font-size: 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #f4c518;
+  animation: neon 1.5s infinite alternate;
+}
+
+@keyframes neon {
+  from { text-shadow: 0 0 5px #f4c518, 0 0 10px #f4c518; }
+  to { text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347; }
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #f4c518;
+  outline: none;
+  width: 250px;
+  background: #232323;
+  color: #f4c518;
+  text-align: center;
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 24px;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: #ff4500;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 8px;
+  font-size: 14px;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  width: 90%;
+  max-width: 1400px;
+}
+
+.movie-card {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(244, 197, 24, 0.8);
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 10px rgba(244, 197, 24, 0.5));
+}
+
+.movie-info h3 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+.add-to-cart, .remove-from-cart, .close-cart {
+  background: #f4c518;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover, .remove-from-cart:hover, .close-cart:hover {
+  background: #ff4500;
+}
+
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-content {
+  background: #1f1f1f;
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(244, 197, 24, 0.8);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 60px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
